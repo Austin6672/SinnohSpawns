@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'org.spongepowered.plugin' version '0.8.1'
+    id 'net.minecraftforge.gradle' version '6.0.+'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://files.minecraftforge.net/maven' }
+    maven { url 'https://repo.spongepowered.org/maven' }
+    maven { url 'https://plugins.gradle.org/m2/' }
+}
+
+dependencies {
+    implementation 'net.minecraftforge:forge:1.16.5-36.2.34'
+    implementation 'com.pixelmonmod:pixelmon:9.1.12'
+}
+
+minecraft {
+    mappings channel: 'official', version: '20201028-1.16.5'
+}
+
+sponge {
+    plugin {
+        id = 'customspawns'
+    }
+}
